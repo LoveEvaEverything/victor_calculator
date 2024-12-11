@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator</title>
+	<link rel="stylesheet" type="text/css" href="calculatorhw.css">
+	<script type="text/javascript">
+		function saveTag(tag){
+			document.getElementById('display_id').value += tag;
+		}
+
+		function clearDisplay(){
+			document.getElementById("display_id").value = "";
+		}
+
+
+		function calculate(){
+			document.getElementById("display_id").value = eval(document.getElementById('display_id').value);
+		}
+
+		function deleteTag() {
+			document.getElementById("display_id").value = document.getElementById("display_id").value.slice(0,-1);
+		}
+
+
+	</script>
+</head>
+<body>
+	<div id="calculator">
+		<input id="display_id" type="text">
+		<div id="operations">
+			<button id="clear_id" onclick="clearDisplay()" >C</button>
+			<button id="bracket_id" onclick="clearDisplay()">AC</button>
+			<button id="delete_id" onclick="deleteTag()" >Del</button>
+			<button id="add_id" onclick="saveTag('+')" >+</button>
+			<br>
+			<button onclick="saveTag('7')">7</button>
+			<button onclick="saveTag('8')">8</button>
+			<button onclick="saveTag('9')">9</button>
+			<button id="minus_id" onclick="saveTag('-')" >-</button>
+			<br>
+			<button onclick="saveTag('4')">4</button>
+			<button onclick="saveTag('5')">5</button>
+			<button onclick="saveTag('6')">6</button>
+			<button id="multiply_id" onclick="saveTag('*')" >x</button>
+			<br>
+			<button onclick="saveTag('1')">1</button>
+			<button onclick="saveTag('2')">2</button>
+			<button onclick="saveTag('3')">3</button>
+			<button id="divide_id" onclick="saveTag('/')">/</button>
+			<br>
+
+			<button onclick="saveTag('0')">0</button>
+			<button onclick="saveTag('00')">00</button>
+			<button onclick="saveTag('.')">.</button>
+			<button id="equal_id" onclick="calculate()">=</button>
+
+		</div>
+	</div>
+
+</body>
+</html>
